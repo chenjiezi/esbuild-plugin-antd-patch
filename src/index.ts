@@ -1,6 +1,4 @@
 import fs from 'fs'
-import { parse } from '@babel/parser'
-import { transformFromAstSync } from '@babel/core'
 interface esTransformConfig {
   include: RegExp
 }
@@ -12,20 +10,15 @@ function esTransform(config: esTransformConfig) {
 
   return {
     name: 'esbuild-plugin-es-transform',
-    setup(build: any) {
-      build.onLoad({ filter: include }, async (args: any) => {
-        console.log('onLoad')
-        const { path } = args
-        const source = fs.readFileSync(path, 'utf-8')
-
-        const ast = parse(source, { sourceType: 'module' })
-
-        // const code = transformFromAstSync(ast, undefined, {
-        //   presets: ['env'],
-        // })
-
-        console.log('ast:', ast)
-
+    setup(build: { onLoad: (arg0: { filter: RegExp }, arg1: (args: { path: fs.PathOrFileDescriptor }) => Promise<{ contents: string }>) => void }) {
+      build.onLoad({ filter: include }, async (args: { path: fs.PathOrFileDescriptor }) => {
+        let source = fs.readFileSync(args.path, 'utf8')
+        if (source.indexOf('import * as moment from')) {
+          source = source.replace(
+            /import\s\*\sas\smoment\sfrom/g,
+            'import moment from',
+          )
+        }
         return { contents: source }
       })
     },
