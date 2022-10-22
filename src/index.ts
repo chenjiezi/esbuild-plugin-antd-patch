@@ -3,8 +3,8 @@ interface antdPatchConfig {
   include: RegExp
 }
 
-function antdPatch(config: antdPatchConfig) {
-  const { include = /moment-util\.js$/ } = config
+function antdPatch(config: antdPatchConfig | undefined) {
+  const include = config?.include || /moment-util\.js$/ // default parameter
 
   return {
     name: 'esbuild-plugin-antd-patch',
