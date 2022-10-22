@@ -2,6 +2,8 @@
 <h2 align="center">esbuild-plugin-antd-patch</h2>
 <br>
 
+an esbuild plugin to fix the defect of ant-design-vue in vite.
+
 ## Git Contribution submission specification
 
 > reference [vue](https://github.com/vuejs/vue/blob/dev/.github/COMMIT_CONVENTION.md) specification ([Angular](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-angular))
