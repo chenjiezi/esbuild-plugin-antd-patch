@@ -4,6 +4,32 @@
 
 an esbuild plugin to fix the defect of ant-design-vue in vite.
 
+## Background
+I guess that esbuild can't parse 'import * as xxx from xxx'. I try to change it to 'import xxx from xxx', and esbuild can parse it normally. This is the birth of the plugin.
+https://github.com/vueComponent/ant-design-vue/blob/1.x/components/_util/moment-util.js#L2
+
+
+## Usage
+
+```
+npm install esbuild-plugin-antd-patch -D
+```
+
+```
+// vite.config.js
+import antdPatch from 'esbuild-plugin-antd-patch'
+import { defineConfig } from 'vite'
+export default defineConfig({
+  optimizeDeps: {
+    esbuildOptions: {
+      plugins: [
+        antdPatch()
+      ]
+    }
+  }
+})
+```
+
 ## Git Contribution submission specification
 
 > reference [vue](https://github.com/vuejs/vue/blob/dev/.github/COMMIT_CONVENTION.md) specification ([Angular](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-angular))
