@@ -1,18 +1,18 @@
 {
-  "name": "esbuild-plugin-es-transform",
+  "name": "esbuild-plugin-antd-patch",
   "type": "module",
   "version": "1.0.0",
   "packageManager": "pnpm@7.13.3",
-  "description": "an esbuild plugin for es transform.",
+  "description": "an esbuild plugin to fix antd1.x defect.",
   "author": "chenjiezi <892774940@qq.com>",
   "license": "ISC",
-  "homepage": "https://github.com/chenjiezi/esbuild-plugin-es-transform#readme",
+  "homepage": "https://github.com/chenjiezi/esbuild-plugin-antd-patch#readme",
   "repository": {
     "type": "git",
-    "directory": "git+https://github.com/chenjiezi/esbuild-plugin-es-transform.git"
+    "directory": "git+https://github.com/chenjiezi/esbuild-plugin-antd-patch.git"
   },
   "bugs": {
-    "url": "https://github.com/chenjiezi/esbuild-plugin-es-transform/issues"
+    "url": "https://github.com/chenjiezi/esbuild-plugin-antd-patch/issues"
   },
   "keywords": [],
   "exports": {

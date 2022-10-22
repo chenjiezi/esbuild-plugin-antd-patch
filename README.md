@@ -1,5 +1,5 @@
 <br>
-<h2 align="center">esbuild-plugin-es-transform</h2>
+<h2 align="center">esbuild-plugin-antd-patch</h2>
 <br>
 
 ## Git Contribution submission specification
